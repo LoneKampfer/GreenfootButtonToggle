@@ -62,21 +62,21 @@ public class ArinManohar extends Student implements SpecialInterestOrHobby
     {
         //creates random motion
         
-        for (int i=1;i<=19;i++){
-            move(2);
-            Greenfoot.delay(5);
-            turn(Greenfoot.getRandomNumber(61)-30);
-            if (isAtEdge()) {
-                turn(81);
-                Greenfoot.delay(10);
-                setImage(standingFile);
-            }  
-            if  (Greenfoot.getRandomNumber(100) < 20) {
+            for (int i=1;i<=19;i++){
+                move(2);
+                Greenfoot.delay(5);
                 turn(Greenfoot.getRandomNumber(61)-30);
-                setRotation(150);
-                setImage(standingFile2);
+                if (isAtEdge()) {
+                    turn(81);
+                    Greenfoot.delay(10);
+                    setImage(standingFile);
+                }  
+                if  (Greenfoot.getRandomNumber(100) < 20) {
+                    turn(Greenfoot.getRandomNumber(61)-30);
+                    setRotation(150);
+                    setImage(standingFile2);
+                }
             }
-        }
         setImage(standingFile);
         setRotation(0);
     }
@@ -156,7 +156,7 @@ public class ArinManohar extends Student implements SpecialInterestOrHobby
          * This is a local method specific to the KilgoreTrout class used to animate the character once the image is clicked on.
          * You should write your own methods to perform your own animation for your character/avatar.
          */
-        public void circleClass(){
+    public void circleClass(){
         // non linear movement modification
             
         setLocation(0,0);
@@ -184,7 +184,7 @@ public class ArinManohar extends Student implements SpecialInterestOrHobby
            Greenfoot.delay(20);
            returnToSeat();
    
-        }
+      }
      
             /**
          * myHobby is one of the interfaces provided.  

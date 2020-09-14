@@ -14,6 +14,7 @@ import java.net.URI;
 public class Classroom extends World
 {
     private ArrayList<Object> listo = new ArrayList<Object>();
+    
     /**
      * Constructor for objects of class Classroom.
      * 
@@ -24,6 +25,21 @@ public class Classroom extends World
         super(10, 6, 130); 
 
         prepare();
+        act();
+        
+    }
+    
+    public void act() 
+    {
+         
+        
+        if(Greenfoot.mouseClicked(this)){
+            if (prepare().getPeriod() == 1) {
+                System.out.print("Jesus");
+           }
+           
+        }
+        
     }
     
     /**
@@ -31,20 +47,22 @@ public class Classroom extends World
      * objects and add them to the world.
      */
    
-     private void prepare()
+    private periodToggle prepare()
     {
         // Add three lines to this doc with your class constructor and your row and seat number
         // Make sure to match your first and last name to the class file you created.
-
         
-        ArinManohar arinmanohar = new ArinManohar("Arin", "Manohar", 1, 1);
-        addObject(arinmanohar, 1, 1);
         
-        arinmanohar.sitDown();
-       
-         
+        periodToggle button = new periodToggle();
+        addObject(button, 4,5);
         
-
+        return button;
+        
+        
 
     }  
+    
+    public periodToggle buttonAccessor(periodToggle buttonObject) {
+        return buttonObject;
+    }
 }
